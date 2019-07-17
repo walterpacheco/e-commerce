@@ -1,0 +1,26 @@
+%nav.navbar.navbar-expand-lg.navbar-dark.bg-primary.sticky-top
+  %a.navbar-brand{href: root_path} Home
+  %button.navbar-toggler{type: "button",
+  "data-toggle": "collapse",
+  "data-target" => "#navbarSupportedContent",
+  "aria-controls" => "navbarSupportedContent",
+  "aria-expanded" => "false",
+  "aria-label" => "Toggle navigation"}
+    %span.navbar-toggler-icon
+  #navbarSupportedContent.collapse.navbar-collapse
+    %ul.navbar-nav.mr-auto
+      %li.nav-item.active
+        %a.nav-link{:href => orders_path } 
+          Mi carro
+          %span.sr-only (current)
+    %ul.navbar-nav.ml-auto
+      -if !user_signed_in?
+        %li.nav-item
+          =link_to 'Iniciar sesión', new_user_session_path, class: 'nav-link'
+        %li.nav-item
+          =link_to 'Registrarse',  new_user_registration_path, class: 'nav-link'
+      -else
+        %li.nav-item
+          %a.nav-link= current_user.email
+        %li.nav-item
+          = link_to 'Cerrar sesión', destroy_user_session_path, method: :delete, class: 'nav-link'
