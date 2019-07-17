@@ -5,11 +5,11 @@ test:
 local:
   # service: Disk
   # root: <%= Rails.root.join("storage") %>
-  service: S3
-  access_key_id: <%= ENV['EUD_AWS_ACCESS_KEY_ID'] %>
-  secret_access_key: <%= ENV['EUD_AWS_SECRET_ACCESS_KEY'] %>
-  region: sa-east-1 #us-east-1
-  bucket: <%= ENV['EUD_AWS_BUCKET'] %>
+   service: S3
+   access_key_id: <%= ENV['EUD_AWS_ACCESS_KEY_ID'] %>
+   secret_access_key: <%= ENV['EUD_AWS_SECRET_ACCESS_KEY'] %>
+   region:  us-east-1
+   bucket: <%= ENV['EUD_AWS_BUCKET'] %>
 
 
 
@@ -27,7 +27,7 @@ amazon:
   service: S3
   access_key_id: <%= ENV['EUD_AWS_ACCESS_KEY_ID'] %>
   secret_access_key: <%= ENV['EUD_AWS_SECRET_ACCESS_KEY'] %>
-  region: sa-east-1 #us-east-1
+  region:  us-east-1
   bucket: <%= ENV['EUD_AWS_BUCKET'] %>
 
 
