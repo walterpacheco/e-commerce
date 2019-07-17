@@ -14,10 +14,10 @@
           
             <% if !user_signed_in? %>
               <li class="nav-item">
-              <%= link_to 'Iniciar sesión', new_user_session_path, class: 'nav-link' %>
+              <%= link_to 'sign in', new_user_session_path, class: 'nav-link' %>
               </li>
               <li class="nav-item">
-              <%= link_to 'Registrarse',  new_user_registration_path, class: 'nav-link'%>
+              <%= link_to 'Sign Up',  new_user_registration_path, class: 'nav-link'%>
               </li>
             <% else %>
             <li class="nav-item">
