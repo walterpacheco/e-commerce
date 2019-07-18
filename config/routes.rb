@@ -4,7 +4,7 @@ Rails.application.routes.draw do
   devise_for :admin_users, ActiveAdmin::Devise.config
   ActiveAdmin.routes(self)
   devise_for :users, :controllers => { :omniauth_callbacks => "users/omniauth_callbacks" }
-  #post '/products', to: 'products#create'
+  post '/products', to: 'products#create'
 
   resources :products, only: [:index,:create,:destroy,:show] do
     resources :orders, only: :create
