@@ -1,10 +1,18 @@
 .card.mb-3
   .row.no-gutters
     .col-md-2
-      %img.card-img{:alt => "...", :src => "/logo.jpg", style: "max-width: 200px"}
-    .col-md-10
+      %img.card-img{:alt => "...", :src => "/logo.jpg", style: "max-width: 140px"}
+    .col-md-7
       .card-body
-        %h5.card-title Es el Mejor E-commerce
+        %h5.card-title Es un detalle
         %p.card-text Envía tu detalle. Disponible en todo Santiago
         %p.card-text
-          %small.text-muted Horarios de lunes a domingo desde las 8:00 hasta 18:00 hrs.
+        /=  %small.text-muted Horarios de despacho
+        - if notice.present?
+          .alert.alert-success{:role => "alert"}
+            = notice
+        - if alert.present?
+          .alert.alert-warning{:role => "alert"}
+          = alert    
+    #chartheader.col-md-3
+     

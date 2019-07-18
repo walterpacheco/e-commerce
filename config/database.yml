@@ -23,7 +23,7 @@ default: &default
 
 development:
   <<: *default
-  database: carro2_development6
+  database: carro2_development5
 
   # The specified database role being used to connect to postgres.
   # To create additional roles in postgres see `$ createuser --help`.

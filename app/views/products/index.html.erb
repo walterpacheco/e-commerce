@@ -1,16 +1,15 @@
 
-<%= link_to "Sign in with Facebook", user_facebook_omniauth_authorize_path, method: :post %>
-
-<h1>New Product</h1>
-
   <%= render 'shared/jumbotron'%>
 
+
+
+
+<div class="chart" id='chart'>
+
+
+</div>
 <%= render 'form', product: @product %>
-
-
-
   <div class="row">
-
     <% @products.each_slice(4) do |row| %>
       <% row.each do |product| %>
         <div class="col">
@@ -26,9 +25,9 @@
             <% end %>
     
             <div class="card-body">
-              <h5> <%= product.name %> </h5>
+              <h5> <%= product.name %> </h>
               <p> <%= product.price %> </p>
-              <%= link_to "Agregar al carro", product_orders_path(product), class: 'btn btn-success', method: :post  %>
+              <%= link_to "Agregar al carro", product_orders_path(product), class: 'btn btn-success', method: :post, data: {remote: :true}  %>
               <%= link_to "Borrar producto", product_path(product), class: 'btn btn-danger', method: :delete  %>
               <%= link_to "detalle producto", product_path(product), class: 'btn btn-primary' %>
               

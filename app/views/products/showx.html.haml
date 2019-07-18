@@ -1,0 +1,19 @@
+.bd-carrusel
+  #carouselExampleCaptions.carousel.slide{"data-ride" => "carousel"}
+    -if (@product.images.attached?)
+      %ol.carousel-indicators
+        -(0..1).each do |i|
+          -if i == 0
+            %li.active{"data-slide-to" => i, "data-target" => "#carouselExampleCaptions"}
+          -else
+            %li{"data-slide-to" => i, "data-target" => "#carouselExampleCaptions"}
+      .carousel-inner
+        -@product.images.each_with_index do |image,i|
+          -if (i==0)
+            .carousel-item.active
+            =image_tag image, :class => "d-block.w-100"
+          -else
+            .carousel-item
+            =image_tag image, :class => "d-block.w-100"
+              
+
