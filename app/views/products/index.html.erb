@@ -28,7 +28,9 @@
               <h5> <%= product.name %> </h5>
               <p> <%= product.price %> </p>
               <%= link_to "Agregar al carro", product_orders_path(product), class: 'btn btn-success', method: :post, data: {remote: :true}  %>
-              <%= link_to "Borrar producto", product_path(product), class: 'btn btn-danger', method: :delete  %>
+              <% if can?(:destroy , product) %>
+                <%= link_to "Borrar producto", product_path(product), class: 'btn btn-danger', method: :delete  %>
+              <%end%>
               <%= link_to "detalle producto", product_path(product), class: 'btn btn-primary' %>
               
             </div>
