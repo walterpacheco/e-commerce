@@ -13,6 +13,7 @@ gem "haml"
 gem 'pg', '~> 0.18'
 gem 'devise', git: 'https://github.com/plataformatec/devise'
 gem 'activeadmin'
+gem 'cancancan'
 
 gem 'faker'
 gem 'paypal-sdk-rest'

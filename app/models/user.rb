@@ -9,6 +9,8 @@ class User < ApplicationRecord
   has_many :billings
   has_many :products, through: :orders
 
+  enum role:[:admin,:visit]
+
 # app/models/user.rb
 
 
