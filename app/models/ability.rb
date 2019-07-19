@@ -8,7 +8,7 @@ class Ability
     #
        user ||= User.new # guest user (not logged in)
     
-       if user.admin?
+       if user.email == "tulio@desafio.com"
          can :manage, :all
        else
          can :read, :all

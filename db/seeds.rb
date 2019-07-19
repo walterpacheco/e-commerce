@@ -7,6 +7,8 @@
 #   Character.create(name: 'Luke', movie: movies.first)
 
 Product.destroy_all
+AdminUser.destroy_all
+User.destroy_all
 
 12.times do |i|
   Product.create(
@@ -16,3 +18,11 @@ Product.destroy_all
   )
 end
  AdminUser.create!(email: 'admin@example.com', password: 'password', password_confirmation: 'password')
+
+#  User.create(
+#    name:'tulio',
+#   email: 'tulio@desafio.com',
+#   password:'123456',
+#   encrypted_password: '123456',
+#   role: 0
+#  )
